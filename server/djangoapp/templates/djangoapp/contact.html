@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <title>Dealership Review</title>
@@ -13,8 +14,7 @@
 
 </head>
 
-    <body>
-    <!--Add a nav bar here -->
+<body>
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <div class="navbar-header">
@@ -44,40 +44,18 @@
             </ul>
         </div>
     </nav>
-
-    <!--Add a dealer table here -->
     <div class="container">
-    <table class="table" id="table" data-filter-control="true">
-            <thead>
-                <tr>
-                    <th scope="col">ID</th>
-                    <th scope="col">Dealer Name</th>
-                    <th scope="col">City</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">Zip</th>
-                    <th data-field="state" data-filter-control="select">State</th>
-                </tr>
-            </thead>
-            <tbody>
-                {% for dealer in dealerships %}
-                <tr>
-                    <td>{{dealer.id}}</td>
-                    <td><a href="{% url 'djangoapp:dealer_details' dealer.id %}">{{dealer.full_name}}</a></td>
-                    <td>{{dealer.city}}</td>
-                    <td>{{dealer.address}}</td>
-                    <td>{{dealer.zip}}</td>
-                    <td>{{dealer.st}}</td>
-                </tr>
-                {% endfor %}
-            </tbody>
-        </table>
+        <p class="mt-5 h2 text-center">
+            Contact Information:
+        </p>
+        <div class="mt-5 h2 text-center">
+            <ul><b>Phone No:</b> 998-012345 </ul>
+            <ul><b>Email:</b>
+                <a>cardealership@car-dealers.com</a>
+            </ul>
+            <ul><b>Address</b><a>198 St. Boulevard</a></ul>
         </div>
-
-    </body>
-    <script>
-    $(function() {
-        $('#table').bootstrapTable()
-    })
-  </script>
+    </div>
+</body>
 
 </html>
